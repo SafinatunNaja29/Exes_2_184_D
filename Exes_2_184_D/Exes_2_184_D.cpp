@@ -12,7 +12,7 @@ void input() {
 		if (n <= 35)
 			break;
 		else
-			cout << "\nArray should have and maximum 81 elements.\n\n";
+			cout << "\nArray should have and maximum 35 elements.\n\n";
 	}
 	cout << "\n------------------\n";
 	cout << "Enter Array Elements\n";
@@ -24,7 +24,7 @@ void input() {
 	}
 }
 
-void BinarySearch() {
+void Algorithm() {
 	char ch;
 	do {
 		cout << " masukan element yang ingin dicari:\n ";
@@ -34,24 +34,26 @@ void BinarySearch() {
 		while (safinatun <= naja) {
 			int mid = (safinatun + naja) / 2;
 			if (saff[mid] == n) {
-				cout << " found " << endl;
+				cout << " Found " << endl;
 				return;
 			}
-			else if (n < saff[mid]) {
+			else if (n < saff[mid])
 				naja = mid - 1;
-			}
-			else (n > saff[mid]); {
-				safinatun = mid + 1;
 
-			}
-			cout << " not found " << endl;
-		}
-		while (ch == 'y' || ch == 'Y');
-	}
+			else (n > saff[mid]);
+			safinatun = mid + 1;
 
-int main() 
+			if (mid == n) cout << " Not Found ";
+			cout << "\nNumber of Comparisons : " << n << endl;
+			cout << "\n continue search (y/n): ";
+			cin >> ch;
+		} 
+	} while ((ch == 'y') || (ch == 'Y'));
+} 
+
+int main()
 {
-	input;
-	BinarySearch;
+	input();
+	Algorithm();
 	return 0;
 }
